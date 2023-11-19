@@ -20,6 +20,7 @@ export function NewDish() {
 
                     <h1>Novo Prato</h1>
 
+                <div className="desktop">
 
                     <label htmlFor="ImageDish">Imagem do prato
                         <DishAvatar>
@@ -32,16 +33,20 @@ export function NewDish() {
                     </label>
 
                 
-                    <label htmlFor="Name">Nome</label>
+                    <label htmlFor="Name">Nome
                     <Input 
                     placeholder="Ex.: Salada Ceasar"
                     id="name"
                     />
+                    </label>
 
-                    <label htmlFor="Category">Categoria</label>
+                    <label htmlFor="Category">Categoria
                     <Input 
                     id="category"
                     />
+                    </label>
+
+                </div>
 
                     <label htmlFor="">Ingredientes</label>
                     <div className="newTags">

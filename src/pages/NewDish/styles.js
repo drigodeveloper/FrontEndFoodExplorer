@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
     width: 100%;
@@ -12,6 +13,17 @@ flex-direction: column;
 
 padding: 1rem 2rem;
 
+> .desktop {
+    display: flex;
+    flex-direction: column;
+   
+    >label {
+        display: flex;
+        flex-direction: column;
+        margin: 1.5rem 0 1.5rem 0;
+    }
+}
+
 > .newTags {
     display: flex;
     background-color: ${({theme}) => theme.COLORS.DARK_BACKGROUND};
@@ -24,6 +36,7 @@ padding: 1rem 2rem;
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 500;   
+    margin-bottom: 2rem;
 }
 
 >label {
@@ -51,7 +64,23 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
 
 }
 
+@media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+    padding: 7.2rem 7.6rem;
+    > .desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        min-width: 100%;
+        
+        > label {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
 
+        }
+    }
+}
 
     
 `;
