@@ -12,6 +12,7 @@ export default {
   
       WHITE: "#E1E1E6",
       RED: "#750310",
+      PINK: "#AB4D55",
       BLUE: "#065E7C",
 
 

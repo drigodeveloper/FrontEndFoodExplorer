@@ -13,23 +13,36 @@ flex-direction: column;
 
 padding: 1rem 2rem;
 
-> .desktop {
+> .rowDesktopOne {
     display: flex;
     flex-direction: column;
    
     >label {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
         margin: 1.5rem 0 1.5rem 0;
     }
 }
 
-> .newTags {
-    display: flex;
-    background-color: ${({theme}) => theme.COLORS.DARK_BACKGROUND};
-    padding: .5rem;
-
+> .rowDesktopTwo {
+    
+    >label {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        > .newTags {
+            display: flex;
+            background-color: ${({theme}) => theme.COLORS.DARK_BACKGROUND};
+            padding: .5rem;
+            border-radius: 8px;
+        }
+    }
 }
+            
+            
+
 
 > h1 {
     font-family: 'Poppins', sans-serif;
@@ -64,11 +77,14 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
 
 }
 
+
+
 @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
-    padding: 7.2rem 7.6rem;
-    > .desktop {
-        display: flex;
-        flex-direction: row;
+    padding: 0 7.2rem 7.6rem;
+    > .rowDesktopOne {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
         align-items: center;
         gap: 2rem;
         min-width: 100%;
@@ -80,6 +96,19 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
 
         }
     }
+
+    > .rowDesktopTwo {
+        display: grid;
+        grid-template-columns: 52rem auto;
+        gap: 2rem;
+    }
+
+    > .saveButton {
+        width: 10.2rem;
+        align-self: flex-end;
+    }
+
+   
 }
 
     
@@ -103,7 +132,6 @@ export const DishAvatar = styled.div`
         height: 3rem;
         border-radius: 8px;
         padding: .7rem 2rem;
-        margin-top: 1rem;
 
         >input {
             display: none;

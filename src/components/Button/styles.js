@@ -14,7 +14,7 @@ export const Container = styled.button`
         margin-right: 2rem;
 
         color: ${({theme}) => theme.COLORS.WHITE};
-        background-color: ${({theme}) => theme.COLORS.RED};
+        background-color: ${({theme, isActive}) => isActive ? theme.COLORS.RED : theme.COLORS.PINK};
 
         font-family: 'Poppins', sans-serif;
         font-size: 14px;

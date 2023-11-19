@@ -1,10 +1,14 @@
 import { Container } from "./styles";
 
-export function Button({icon: Icon, title, ...rest}) {
+export function Button({ icon:Icon, title, isactive = false, loading= false, ...rest}) {
     return(
-        <Container {...rest}>
+        <Container 
+        type="button"
+        {...rest}
+        $isactive={isactive.toString()} 
+        >
             {Icon && <Icon/>}
-            {title}
+            {loading ? "Carregando..." : title}
         </Container>
     )
 }

@@ -26,7 +26,7 @@ width: 100%;
 @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
 display: flex;
 flex-direction: row;
-padding: 0 6.7rem;
+padding: auto 6.7rem;
 align-items: center;
 justify-content: center;
 
@@ -55,7 +55,7 @@ flex-direction: column;
     min-width: 29.7rem;
     border-radius: 1rem;
     padding: 4rem;
-    /* margin: 8rem 0; */
+    
     
 
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};

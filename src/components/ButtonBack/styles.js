@@ -20,7 +20,11 @@ export const Container = styled.button`
     font-size: 1rem;
     
     @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
-        margin: 2.2rem 3.5rem 1rem;
+        margin: 2.5rem 7.6rem; 
+        font-weight: 700;
+
+
+
 
 
     }

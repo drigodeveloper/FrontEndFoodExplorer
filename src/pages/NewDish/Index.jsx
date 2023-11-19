@@ -20,7 +20,7 @@ export function NewDish() {
 
                     <h1>Novo Prato</h1>
 
-                <div className="desktop">
+                <div className="rowDesktopOne">
 
                     <label htmlFor="ImageDish">Imagem do prato
                         <DishAvatar>
@@ -48,18 +48,24 @@ export function NewDish() {
 
                 </div>
 
-                    <label htmlFor="">Ingredientes</label>
+                <div className="rowDesktopTwo">
+                    <label htmlFor="">Ingredientes
                     <div className="newTags">
                         <IngredientsItems/>
                         <IngredientsItems isNew />
                     </div>
+                    </label>
                     
 
-                    <label htmlFor="">Preço</label>
+                    <label htmlFor="">Preço
                     <Input 
                     placeholder="R$ 00,00"
                     id="price"
                     />
+                    </label>
+                </div>
+
+
 
                     <label htmlFor="description">Descrição</label>
                     <textarea 
@@ -69,19 +75,23 @@ export function NewDish() {
                     rows="10"
                     
                     />
-
-                    <Button 
-                    title="Salvar alterações"
-                    />
-                
-
+                    
+                    <div className="saveButton">
+                        <Button 
+                        isactive
+                        title="Salvar alterações"
+                        />
+                    </div>
             </Content>
-
-
-
         </Container>
     )
 }
+
+
+                
+
+
+
                         
 
 
