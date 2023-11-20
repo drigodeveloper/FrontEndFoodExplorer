@@ -1,26 +1,30 @@
 import { Container } from "./styles";
+import{ Counter } from '../../components/Counter'
+import{ Button } from '../../components/Button/Index'
+import { FaRegHeart } from "react-icons/fa";
+import { MdOutlineEdit } from "react-icons/md";
+import maskgroup from '../../assets/Mask group-10.png'
 
 
-export function DishBox() {
+
+export function DishBox({title, price, description, isAdmin = false}) {
     return(
         <Container>
-            <Header />
+            <button className="likeButton">
+                {isAdmin ? <MdOutlineEdit/> : <FaRegHeart />}
+            </button>
 
-            <Content>
+            <img src={maskgroup} alt="" />
+            <h1>{title}</h1>
+            <p>{description}</p>
+            <h2>R${price}</h2>
+            <div className="counter">
+                {isAdmin ? "" : <Counter />}
+            </div>
 
-            </Content>
+            <Button title="incluir"/>
 
-            <Banner>
-                <img src={banner} alt="" />
-                <div className="description">
-                    <h1>Sabores inigualáveis</h1>
-                    <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
-                </div>
-
-            </Banner>
-
-
-          
+            
             
         </Container>
     )

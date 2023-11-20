@@ -78,6 +78,12 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1rem 1rem;
+    
+
+    @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+        padding: 1rem 7.7rem;
+
+    }
 `;
 
 

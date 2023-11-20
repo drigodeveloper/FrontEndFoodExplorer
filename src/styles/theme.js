@@ -14,11 +14,8 @@ export default {
       RED: "#750310",
       PINK: "#AB4D55",
       BLUE: "#065E7C",
+      LIGHT_BLUE: "#82F3FF",
 
-
-      BLACK_100: "#000204",
-      BLACK_200: "#00070A",
-  
       GRAY_100: "#FFFAF1",
       GRAY_200: "#7C7C8A",
       GRAY_300: "#4D585E",
