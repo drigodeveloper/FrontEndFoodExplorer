@@ -3,7 +3,8 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 
 export const Container = styled.div`
-
+    width: 100%;
+    
    
 `;
 
@@ -41,6 +42,33 @@ export const Banner = styled.div`
     font-style: normal;
     font-weight: 400;
     }
+
+}
+
+@media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+    height: 16.2rem;
+    margin-top: 10.2rem;
+    >img {
+        display: flex;
+        width: 39.5rem;
+        height: 25.3rem;
+        margin-top: -9rem;
+        
+    }
+
+    >.description {
+    
+    > h1 {
+     font-size: 2.5rem;
+    }
+    
+    > p{
+    font-size: 1rem;
+    }
+
+}
+    
+    
 
 }
    
