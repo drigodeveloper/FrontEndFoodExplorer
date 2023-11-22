@@ -1,4 +1,5 @@
 import { Container, Form, ButtonText } from "./styles";
+import { Link } from "react-router-dom";
 import { Logo } from '../../components/Logo/Index'
 import { Input } from '../../components/Input/Index'
 import { Button } from '../../components/Button/Index'
@@ -28,7 +29,9 @@ export function Signin() {
                 <Button title="Entrar"/>
 
                 <ButtonText>
-                    <span>Criar uma conta</span>
+                    <Link to="/register">
+                        Criar uma conta
+                    </Link>
                 </ButtonText>
 
             </Form>

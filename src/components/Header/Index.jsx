@@ -1,4 +1,4 @@
-import { Container, Logo } from "./styles";
+import { Container, Logo, ButtonMenu, RequestsButton, ButtonLogout } from "./styles";
 import { Input } from '../Input/Index'
 import { FiMenu } from 'react-icons/fi'
 import { BsFillHexagonFill, BsSearch } from 'react-icons/bs'
@@ -9,9 +9,10 @@ export function Header() {
   return (
    <Container>
 
-            <button className="buttonMenu">
-                <FiMenu />
-            </button>
+                <ButtonMenu>
+                    <FiMenu />
+                </ButtonMenu>
+
 
             <Logo>
                 <BsFillHexagonFill />
@@ -26,14 +27,17 @@ export function Header() {
             />
             </div>
 
-            <button className="requestsButton">
+            <RequestsButton>
                 <PiReceipt />
-                <p className="textButton">Pedidos</p>
-            </button>
+                <p>Pedidos</p>
+            </RequestsButton>
 
-            <button className="buttonLogout">
+            
+            
+            <ButtonLogout>
                 <PiSignOutFill />
-            </button>
+            </ButtonLogout>
+
 
    </Container>
   )

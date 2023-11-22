@@ -12,35 +12,6 @@ justify-content: space-evenly;
 
 background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
 
-
-
-
-> .buttonMenu {
-    background-color: transparent;
-    border: none;
-    color: ${({theme}) => theme.COLORS.WHITE};
-    width: 1.5rem;
-    height: 1.5rem;
-
-    > svg {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-
-}
-
-.requestsButton {
-    display: flex;
-    background-color: transparent;
-    border: none;
-    color: ${({theme}) => theme.COLORS.WHITE};
-    width: 1.5rem;
-    height: 1.5rem 
-
-    
-
-}
 > .inputSearch, .buttonLogout {
     display: none;
 }
@@ -55,32 +26,6 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
         width: 36.31rem;
     }
 
-    > .requestsButton {
-        background-color: ${({theme}) => theme.COLORS.RED};
-
-        > .textButton {
-            background-color: ${({theme}) => theme.COLORS.RED};
-
-        }
-    }
-
-
-    > .buttonLogout {
-        
-        display: flex;
-        background-color: transparent;
-        border: none;
-        color: ${({theme}) => theme.COLORS.WHITE};
-        width: 2rem;
-        height: 2rem;
-
-        
-
-    > svg {
-        width: 2rem;
-        height: 2rem;
-}
-    }
 
 
 }
@@ -105,5 +50,57 @@ export const Logo = styled.div`
         font-size: 1.3rem;
         font-style: normal;
         font-weight: 700;
+    }
+`;
+export const ButtonMenu = styled.button`
+    background-color: transparent;
+    border: none;
+    color: ${({theme}) => theme.COLORS.WHITE};
+    width: 1.5rem;
+    height: 1.5rem;
+
+    > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+    
+        display: none;
+    
+}
+
+`;
+
+export const RequestsButton = styled.button`
+    display: flex;
+    background-color: transparent;
+    border: none;
+    color: ${({theme}) => theme.COLORS.WHITE};
+    width: 1.5rem;
+    height: 1.5rem 
+
+
+   
+
+`;
+
+export const ButtonLogout = styled.button`
+    display: none;
+    @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+ 
+        display: flex;
+        background-color: transparent;
+        border: none;
+        color: ${({theme}) => theme.COLORS.WHITE};
+        width: 2rem;
+        height: 2rem;
+
+        
+
+    > svg {
+        width: 2rem;
+        height: 2rem;
+}
     }
 `;

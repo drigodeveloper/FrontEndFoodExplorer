@@ -91,7 +91,7 @@ export const ButtonText = styled.button`
     background: transparent;
     border: none;
 
-    > span {
+    > a {
         font-family: 'Poppins', sans-serif;
         font-size: 1rem;
         font-style: normal;
