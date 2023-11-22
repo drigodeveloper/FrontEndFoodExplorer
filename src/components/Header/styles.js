@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
+import { Link } from "react-router-dom";
+
 
 
 export const Container = styled.div`
@@ -12,7 +14,7 @@ justify-content: space-evenly;
 
 background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
 
-> .inputSearch, .buttonLogout {
+> .inputSearch {
     display: none;
 }
 
@@ -52,7 +54,7 @@ export const Logo = styled.div`
         font-weight: 700;
     }
 `;
-export const ButtonMenu = styled.button`
+export const ButtonMenu = styled(Link)`
     background-color: transparent;
     border: none;
     color: ${({theme}) => theme.COLORS.WHITE};

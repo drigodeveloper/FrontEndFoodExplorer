@@ -1,4 +1,4 @@
-import { Container, Header } from "./styles";
+import { Container, Header, CloseButton } from "./styles";
 import { Input } from '../../components/Input/Index'
 import { Footer } from '../../components/Footer/Index'
 import { IoMdClose } from "react-icons/io";
@@ -9,10 +9,10 @@ export function SearchMenuMobile() {
     return(
         <Container>
             <Header>
-                <button>
+                <CloseButton to="/">
                     <IoMdClose />
                     Menu
-                </button>
+                </CloseButton>
             </Header>
 
             <div className="search">

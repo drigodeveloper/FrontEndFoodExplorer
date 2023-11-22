@@ -1,4 +1,5 @@
 import { Container, Logo, ButtonMenu, RequestsButton, ButtonLogout } from "./styles";
+import { Link } from "react-router-dom";
 import { Input } from '../Input/Index'
 import { FiMenu } from 'react-icons/fi'
 import { BsFillHexagonFill, BsSearch } from 'react-icons/bs'
@@ -9,7 +10,7 @@ export function Header() {
   return (
    <Container>
 
-                <ButtonMenu>
+                <ButtonMenu to="/search">
                     <FiMenu />
                 </ButtonMenu>
 
