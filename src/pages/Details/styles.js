@@ -7,6 +7,23 @@ width: 100%;
 display: flex;
 flex-direction: column;
 
+    >a {
+        display: flex;
+        width: fit-content;
+        background-color: transparent;
+        border: none;
+        color: ${({theme}) => theme.COLORS.WHITE};
+
+        align-items: center;
+
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+
+        margin: 1rem 2rem;
+        font-size: 1rem;
+    }
     
 `;
 

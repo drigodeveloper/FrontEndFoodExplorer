@@ -5,6 +5,8 @@ import { Button } from '../../components/Button/Index'
 import { Input } from '../../components/Input/Index'
 import { IngredientsItems } from '../../components/IngredientsItems/Index'
 import { FiUpload } from "react-icons/fi";
+import { MdArrowBackIosNew } from "react-icons/md";
+import { Link } from 'react-router-dom'
 
 
 
@@ -13,7 +15,11 @@ export function NewDish() {
     return(
         <Container>
             <Header />
-            <ButtonBack />
+            
+            <Link to="/">
+                <MdArrowBackIosNew />
+                Voltar
+            </Link>   
 
             <Content>
                 

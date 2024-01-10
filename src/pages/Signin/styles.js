@@ -5,10 +5,11 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-padding: 0 4rem;
+padding: 0 8rem;
 
 
 width: 100%;
+height: 100vh;
 
 .logo{
     width: 100%;

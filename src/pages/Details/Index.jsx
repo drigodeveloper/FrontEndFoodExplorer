@@ -1,13 +1,13 @@
 import { Container, Content, GridTags, Account } from './styles'
 import { Header } from '../../components/Header/Index'
-import { ButtonBack } from '../../components/ButtonBack/Index'
 import { Counter } from '../../components/Counter/Index'
 import { Button } from '../../components/Button/Index'
 import { Tags } from '../../components/Tags/Index'
 import { Footer } from '../../components/Footer/Index'
-import { MdArrowBackIosNew } from "react-icons/md";
 import Maskgroup from '../../assets/Mask group-2.png'
 import { PiReceipt } from 'react-icons/pi'
+import { MdArrowBackIosNew } from "react-icons/md";
+import { Link } from 'react-router-dom'
 
 
 
@@ -16,8 +16,11 @@ export function Details() {
    <Container>
     <Header />
 
-    <ButtonBack/>
-      
+    <Link to="/">
+      <MdArrowBackIosNew />
+      Voltar
+    </Link>      
+
 
     <Content>
 

@@ -76,13 +76,16 @@ export const ButtonMenu = styled(Link)`
 
 export const RequestsButton = styled.button`
     display: flex;
-    background-color: transparent;
+    background-color: ${({theme}) => theme.COLORS.RED};;
     border: none;
     color: ${({theme}) => theme.COLORS.WHITE};
     width: 1.5rem;
-    height: 1.5rem 
+    height: 1.5rem;
 
-
+    
+    @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+        
+    }
    
 
 `;
