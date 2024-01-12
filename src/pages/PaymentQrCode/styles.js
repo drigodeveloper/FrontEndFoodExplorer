@@ -85,13 +85,99 @@ export const PaymentCard = styled.div`
 
     }
 
-    > img {
-        width: 11rem;
-        height: 11rem;
-        margin: 2rem auto;
-    }
-
+    
     
 `;
+
+export const AbaQrCode = styled.div`
+    margin: 2rem auto;
+
+> img {
+        width: 11rem;
+        height: 11rem;
+    }
+`;
+
+export const AbaCreditCard = styled.form`
+    display: flex;
+    flex-direction: column;
+
+    padding: 3.5rem 1.6rem;
+
+    >label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            color: ${({theme}) => theme.COLORS.GRAY_400};
+        }
+
+    >input {
+        width: 100%;
+            height: 3rem;
+            margin-top: .5rem;
+            background-color: transparent;
+            color: ${({theme}) => theme.COLORS.WHITE};
+            border: 1px solid ${({theme}) => theme.COLORS.WHITE};
+            border-radius: 5px;
+            padding: 0.4rem;
+        }
+
+    >.inputsBox {
+        display: flex;
+        gap: 1rem;
+        margin: 2.3rem 0;
+
+    }
+    
+    >.inputsBox .validity {
+
+        >label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            color: ${({theme}) => theme.COLORS.GRAY_400};
+        }
+        
+        >input {
+            width: 100%;
+            height: 3rem;
+            margin-top: .5rem;
+            background-color: transparent;
+            border: 1px solid ${({theme}) => theme.COLORS.WHITE};
+            color: ${({theme}) => theme.COLORS.WHITE};
+            border-radius: 5px;
+            padding: 0.4rem;
+
+        }
+    }
+
+    >.inputsBox .cvc {
+
+        >label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            color: ${({theme}) => theme.COLORS.GRAY_400};
+        }
+
+        >input {
+            width: 100%;
+            height: 3rem;
+            margin-top: .5rem;
+            background-color: transparent;
+            border: 1px solid ${({theme}) => theme.COLORS.WHITE};
+            color: ${({theme}) => theme.COLORS.WHITE};
+            border-radius: 5px;
+            padding: 0.4rem;
+
+
+        }
+    }
+
+`;
+
 
 
