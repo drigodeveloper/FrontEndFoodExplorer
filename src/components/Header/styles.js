@@ -79,19 +79,18 @@ export const RequestsButton = styled(Link)`
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    background-color: ${({theme}) => theme.COLORS.RED};;
+    background-color: transparent;
     border: none;
     border-radius: 5px;
     color: ${({theme}) => theme.COLORS.WHITE};
-    width: 13.5rem;
-    height: 3rem;
+    width: 1.5rem;
+    height: 1.5rem;
 
-    > p{
-        font-family: 'Poppins', sans-serif;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 500;
+    > p {
+        display: none;
     }
+
+   
 
     >svg {
         width: 2rem;
@@ -101,8 +100,23 @@ export const RequestsButton = styled(Link)`
     
     @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
         
+        background-color: ${({theme}) => theme.COLORS.RED};
+        width: 13.5rem;
+        height: 3rem;
+
+
+
+    > p{
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
     }
-   
+
+       
+    } 
+    
 
 `;
 

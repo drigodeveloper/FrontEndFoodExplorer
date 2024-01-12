@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 
 export const Container = styled.div`
-   
+   display: flex;
+   flex-direction: column;
 
 `;
 
 export const Content = styled.div`
-    padding: 2.1rem 7.6rem;
+    padding:  3.5rem 2.1rem;
 
     > h1 {
         font-family: 'Poppins', sans-serif;
@@ -17,24 +18,43 @@ export const Content = styled.div`
         margin-bottom: 2.1rem;
     }
 
-    >ul {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+
+`;
+
+export const CardRequest = styled.div`
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 1rem;
+
+
+    >.descriptionDish h1 { 
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 500;
     }
-
-    > ul li {
-        display: flex;
-        list-style: none;
-        align-items: center;
-
+    >.descriptionDish a {
+        font-family: 'Roboto', sans-serif;
+        font-size: .7rem;
+        color: ${({theme}) => theme.COLORS.RED };
     }
-
-    > ul li img {
+    > .img img {
         width: 6.2rem;
         height: 6.2rem;
         margin-right: 1rem;
+    }
+`;
 
+export const Total = styled.div`
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 2.9rem;
+
+    > h1, p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 500;
     }
 `;
 

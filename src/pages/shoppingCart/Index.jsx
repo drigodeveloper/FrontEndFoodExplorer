@@ -1,6 +1,10 @@
-import { Container, Content } from "./styles";
+import { Container, Content, CardRequest, Total } from "./styles";
+
 import { Header } from "../../components/Header";
-import maskGroup from '../../assets/Mask group-2.png'
+import { Button } from '../../components/Button';
+import { Footer } from '../../components/Footer'
+
+import maskGroup from '../../assets/Mask group-2.png';
 
 export function ShoppingCart() {
 
@@ -10,15 +14,42 @@ export function ShoppingCart() {
 
             <Content>
             <h1>Meu pedido</h1>
-            
-            <ul>
-                <li><img src={maskGroup} alt="" />1 x  Salada Radish <p>R$ 29,99</p> <a href="">Excluir</a></li>
-                <li><img src={maskGroup} alt="" />1 x  Salada Radish <p>R$ 29,99</p> <a href="">Excluir</a></li>
-                <li><img src={maskGroup} alt="" />1 x  Salada Radish <p>R$ 29,99</p> <a href="">Excluir</a></li>
-                
-            </ul>
+
+            <CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest>
+            <CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest>
+
+
+            <Total>
+                <h1>Total:</h1>
+                <p>R$ 103,88</p>
+            </Total>
+
+            <Button title="Avançar"/>
 
             </Content>
+
+            <Footer/>
+
 
 
         </Container>
