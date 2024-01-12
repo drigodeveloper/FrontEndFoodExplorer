@@ -4,6 +4,7 @@ import { Details } from '../pages/Details/Index'
 import { Home } from '../pages/Home/Index'
 import { SearchMenuMobile } from '../pages/SearchMenuMobile/Index'
 import { ShoppingCart } from '../pages/shoppingCart/Index'
+import { PaymentQrCode } from '../pages/PaymentQrCode/Index'
 
 export function AppRoutes() {
     return(
@@ -12,6 +13,7 @@ export function AppRoutes() {
             <Route path="/details" element={<Details/>}/>
             <Route path="/search" element={<SearchMenuMobile/>}/>
             <Route path="/cart" element={<ShoppingCart/>}/>
+            <Route path="/payment" element={<PaymentQrCode/>}/>
             
         </Routes>
     )

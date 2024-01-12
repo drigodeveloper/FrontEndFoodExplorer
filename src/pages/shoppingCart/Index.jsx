@@ -44,7 +44,7 @@ export function ShoppingCart() {
                 <p>R$ 103,88</p>
             </Total>
 
-            <Button title="Avançar"/>
+            <Button title="Avançar" to="/payment"/>
 
             </Content>
 
