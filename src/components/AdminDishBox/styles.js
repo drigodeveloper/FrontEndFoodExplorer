@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
-export const Container = styled(Link)`
+export const Container = styled.div`
 display: flex;
 flex-direction: column;
 position: relative;
@@ -18,25 +18,14 @@ border-radius: 8px;
 
 
 >.likeButton {
-    background-color: transparent;
-    border: none;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        
-        >svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: ${({theme}) => theme.COLORS.WHITE};
-            
-            
-        }
+   
     }
     
-    >img {
-        width: 5.5rem;
-        height: 5.5rem;
-        margin: 0 auto;
+    > a img {
+        display: flex;
+        width: 11rem;
+        height: 11rem;
+        margin: 0 auto 1rem ;
     }
 
     > h1 {
@@ -100,5 +89,23 @@ border-radius: 8px;
     }
     
 `;
+
+export const UpdateButton = styled(Link)`
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        
+        >svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: ${({theme}) => theme.COLORS.WHITE};
+            
+            
+        }
+`; 
+
+
 
 

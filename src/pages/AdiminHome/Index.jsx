@@ -1,15 +1,15 @@
 import { Container, Banner, Content } from "./styles";
-import{ Header } from '../../components/Header'
-import{ Sessions } from '../../components/Sessions/Index'
+import{ AdiminHeader } from '../../components/AdiminHeader/Index'
+import{ AdminSessions } from '../../components/AdminSessions/Index'
 import{ DishBox } from '../../components/DishBox/Index'
 import banner from '../../assets/banner.svg'
 
-export function Home() {
+export function AdiminHome() {
 
 
     return(
         <Container>
-            <Header />
+            <AdiminHeader />
 
             <Content>
                 <Banner>
@@ -19,32 +19,32 @@ export function Home() {
                         <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
                     </div>
                 </Banner>
-                <Sessions title="Refeições">
+                <AdminSessions title="Refeições">
                     <DishBox 
                     title="Salada Ravanello"
                     description="Massa fresca com camarões e pesto."
                     price="49,97"
                     />
 
-                </Sessions>
+                </AdminSessions>
 
-                <Sessions title="Sobremesas">
+                <AdminSessions title="Sobremesas">
                     <DishBox 
                     title="Salada Ravanello"
                     description="Massa fresca com camarões e pesto."
                     price="49,97"
                     />
 
-                </Sessions>
+                </AdminSessions>
 
-                <Sessions title="Bebidas">
+                <AdminSessions title="Bebidas">
                     <DishBox 
                     title="Salada Ravanello"
                     description="Massa fresca com camarões e pesto."
                     price="49,97"
                     />
 
-                </Sessions>
+                </AdminSessions>
 
             
             </Content>

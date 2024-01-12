@@ -74,13 +74,29 @@ export const ButtonMenu = styled(Link)`
 
 `;
 
-export const RequestsButton = styled.button`
+export const RequestsButton = styled(Link)`
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
     background-color: ${({theme}) => theme.COLORS.RED};;
     border: none;
+    border-radius: 5px;
     color: ${({theme}) => theme.COLORS.WHITE};
-    /* width: 1.5rem;
-    height: 1.5rem; */
+    width: 13.5rem;
+    height: 3rem;
+
+    > p{
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    >svg {
+        width: 2rem;
+        height: 2rem;
+    }
 
     
     @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {

@@ -1,20 +1,50 @@
+import { api } from "../../services/api"
+import { useState } from "react";
+
 import { Container, Content, DishAvatar } from "./styles";
-import { Header } from '../../components/Header/Index'
-import { ButtonBack } from '../../components/ButtonBack/Index'
+
+import { AdiminHeader } from '../../components/AdiminHeader/Index'
 import { Button } from '../../components/Button/Index'
 import { Input } from '../../components/Input/Index'
 import { IngredientsItems } from '../../components/IngredientsItems/Index'
+
 import { FiUpload } from "react-icons/fi";
 import { MdArrowBackIosNew } from "react-icons/md";
+
 import { Link } from 'react-router-dom'
 
 
 
 
+
 export function NewDish() {
+
+    const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
+    const [tags, setTags] = useState("");
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
+
+    async function addNewDish() {
+        if(!title || !category || !price || !description) {
+            alert("Preencha todos os campos para cadastrar um novo prato!")
+            return
+        }
+
+        console.log(tags)
+        
+        try {
+            await api.post("/menu", { title, description, category, price })
+            alert("Prato criado com sucesso!")
+        }catch(error) {
+            alert("Não foi possível criar o prato")
+        }
+    }
+   
+
     return(
         <Container>
-            <Header />
+            <AdiminHeader />
             
             <Link to="/">
                 <MdArrowBackIosNew />
@@ -24,7 +54,7 @@ export function NewDish() {
             <Content>
                 
 
-                    <h1>Novo Prato</h1>
+                    <h1>Adicionar Prato</h1>
 
                 <div className="rowDesktopOne">
 
@@ -43,12 +73,14 @@ export function NewDish() {
                     <Input 
                     placeholder="Ex.: Salada Ceasar"
                     id="name"
+                    onChange={event => setTitle(event.target.value)}
                     />
                     </label>
 
                     <label htmlFor="Category">Categoria
                     <Input 
                     id="category"
+                    onChange={event => setCategory(event.target.value)}
                     />
                     </label>
 
@@ -57,8 +89,10 @@ export function NewDish() {
                 <div className="rowDesktopTwo">
                     <label htmlFor="">Ingredientes
                     <div className="newTags">
-                        <IngredientsItems/>
-                        <IngredientsItems isNew />
+                        <IngredientsItems
+                        onChange={event => setTags(event.target.value)}
+                        />
+                        <IngredientsItems />
                     </div>
                     </label>
                     
@@ -67,6 +101,7 @@ export function NewDish() {
                     <Input 
                     placeholder="R$ 00,00"
                     id="price"
+                    onChange={event => setPrice(event.target.value)}
                     />
                     </label>
                 </div>
@@ -79,6 +114,8 @@ export function NewDish() {
                     id="description" 
                     cols="30" 
                     rows="10"
+                    onChange={event => setDescription(event.target.value)}
+
                     
                     />
                     
@@ -86,6 +123,7 @@ export function NewDish() {
                         <Button 
                         isactive
                         title="Salvar alterações"
+                        onClick={addNewDish}
                         />
                     </div>
             </Content>

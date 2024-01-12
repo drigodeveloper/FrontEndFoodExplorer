@@ -4,7 +4,7 @@ import{ Sessions } from '../../components/Sessions/Index'
 import{ DishBox } from '../../components/DishBox/Index'
 import banner from '../../assets/banner.svg'
 
-export function Home() {
+export function Home({ is_admin = false }) {
 
 
     return(
@@ -19,6 +19,7 @@ export function Home() {
                         <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
                     </div>
                 </Banner>
+
                 <Sessions title="Refeições">
                     <DishBox 
                     title="Salada Ravanello"

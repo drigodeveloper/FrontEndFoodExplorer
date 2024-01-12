@@ -1,14 +1,15 @@
-import { Container, Logo, ButtonMenu, RequestsButton, ButtonLogout } from "./styles";
+import { Container, Logo, ButtonMenu, NewDishButton, ButtonLogout } from "./styles";
 import { Link } from "react-router-dom";
 import { Input } from '../Input/Index'
 import { FiMenu } from 'react-icons/fi'
 import { BsFillHexagonFill, BsSearch } from 'react-icons/bs'
-import { PiReceipt, PiSignOutFill } from 'react-icons/pi'
+import { PiSignOutFill } from 'react-icons/pi'
+
 import { useAuth } from "../../hooks/auth";
 
 
 
-export function Header() {
+export function AdiminHeader() {
 
     const { signOut } = useAuth();
 
@@ -22,7 +23,11 @@ export function Header() {
 
             <Logo>
                 <BsFillHexagonFill />
-                <h1>Food explorer</h1>
+                <div className="logoName">
+                    <h1>Food explorer</h1>
+                    <p>admin</p>
+                </div>
+
             </Logo>
 
 
@@ -33,10 +38,9 @@ export function Header() {
             />
             </div>
 
-            <RequestsButton>
-                <PiReceipt />
-                <p>Pedidos</p>
-            </RequestsButton>
+            <NewDishButton to="/newDish">
+                Novo prato
+            </NewDishButton>
 
             
             

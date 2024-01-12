@@ -7,11 +7,11 @@ import maskgroup from '../../assets/Mask group-10.png'
 
 
 
-export function DishBox({title, price, description, isAdmin = false}) {
+export function DishBox({title, price, description, is_admin = false}) {
     return(
-        <Container>
+        <Container >
             <button className="likeButton">
-                {isAdmin ? <MdOutlineEdit/> : <FaRegHeart />}
+                <FaRegHeart />
             </button>
 
             <img src={maskgroup} alt="" />
@@ -19,7 +19,7 @@ export function DishBox({title, price, description, isAdmin = false}) {
             <p>{description}</p>
             <h2>R${price}</h2>
             <div className="counter">
-                {isAdmin ? "" : <Counter />}
+                <Counter />
             </div>
 
             <Button title="incluir"/>

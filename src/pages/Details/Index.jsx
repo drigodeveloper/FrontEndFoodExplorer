@@ -1,5 +1,6 @@
 import { Container, Content, GridTags, Account } from './styles'
 import { Header } from '../../components/Header/Index'
+import { AdiminHeader } from '../../components/AdiminHeader/Index'
 import { Counter } from '../../components/Counter/Index'
 import { Button } from '../../components/Button/Index'
 import { Tags } from '../../components/Tags/Index'
@@ -11,10 +12,14 @@ import { Link } from 'react-router-dom'
 
 
 
-export function Details() {
+
+
+export function Details({ is_admin = false }) {
+
   return (
    <Container>
-    <Header />
+
+    { is_admin ? <Header /> : <AdiminHeader/>}
 
     <Link to="/">
       <MdArrowBackIosNew />
