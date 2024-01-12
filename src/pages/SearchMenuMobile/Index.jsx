@@ -1,6 +1,10 @@
 import { Container, Header, CloseButton } from "./styles";
+
+import { Link } from "react-router-dom";
+
 import { Input } from '../../components/Input/Index'
 import { Footer } from '../../components/Footer/Index'
+
 import { IoMdClose } from "react-icons/io";
 import { BsSearch } from 'react-icons/bs'
 
@@ -22,9 +26,15 @@ export function SearchMenuMobile() {
                 />
             </div>
 
-            <button>
-                Sair
-            </button>
+            <nav>
+            <Link to="/history">Histórico de pedidos</Link>
+            <Link >Meus favoritos</Link>
+            <Link >Sair</Link>
+
+            </nav>
+
+
+            
 
             <Footer />
 

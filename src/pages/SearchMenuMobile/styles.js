@@ -11,11 +11,15 @@ width: 100%;
     margin-top: 2.2rem;
  }
 
- >button {
+ > nav a {
+    display: flex;
+    flex-direction: column;
     margin: 2.2rem 1.7rem;
+    padding: 0 0 .6rem 0;
 
     background: transparent;
     border: none;
+    border-bottom: 1px solid ${({theme}) => theme.COLORS.WHITE};
 
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
