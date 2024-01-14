@@ -28,7 +28,7 @@ export function SearchMenuMobile() {
 
             <nav>
             <Link to="/history">Histórico de pedidos</Link>
-            <Link >Meus favoritos</Link>
+            <Link to="/favorites">Meus favoritos</Link>
             <Link >Sair</Link>
 
             </nav>

@@ -12,7 +12,7 @@ export function Favorites() {
             <Header />
 
             <Content>
-            <h1>Meu pedido</h1>
+            <h1>Meu favoritos</h1>
 
             <CardRequest>
                 <div className="img">
