@@ -29,8 +29,27 @@ width: 100%;
 
  }
 
+ > nav button {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 1.7rem;
+    margin-left: 1.7rem;
+    padding: 0 .6rem .6rem 0;
 
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid ${({theme}) => theme.COLORS.WHITE};
 
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    color: ${({theme}) => theme.COLORS.WHITE};
+
+ }
+
+ 
 `;
 
 export const Header = styled.div`

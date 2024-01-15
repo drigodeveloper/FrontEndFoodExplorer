@@ -25,7 +25,7 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
 
     > .inputSearch {
         display: flex;
-        width: 36.31rem;
+        max-width: 100%;
     }
 
 
@@ -36,7 +36,7 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
     
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
     display: flex;
 
     >svg {
@@ -52,8 +52,10 @@ export const Logo = styled.div`
         font-size: 1.3rem;
         font-style: normal;
         font-weight: 700;
+        color: ${({theme}) => theme.COLORS.WHITE};
     }
 `;
+
 export const ButtonMenu = styled(Link)`
     background-color: transparent;
     border: none;
@@ -142,5 +144,17 @@ export const ButtonLogout = styled.button`
 
 export const NavBar = styled.div`
     display: flex;
+    gap: 2rem;
+    margin-right: 1.5rem;
+    margin-left: 2.2rem;
+
+    > a {
+        color: ${({theme}) => theme.COLORS.WHITE};
+    }
+
+    @media(max-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+        display: none;
+    }
+
 `;
 

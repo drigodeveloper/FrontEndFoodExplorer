@@ -1,8 +1,9 @@
-import { Container, Content, CardRequest, Total } from "./styles";
+import { Container, Content, CardRequest, Total, PaymentMobile, ListRequest } from "./styles";
 
-import { Header } from "../../components/Header";
+import { RequestHeader } from "../../components/RequestHeader";
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer'
+import { PaymentQrCode } from '../../components/PaymentQrCode/Index'
 
 import maskGroup from '../../assets/Mask group-2.png';
 
@@ -10,9 +11,11 @@ export function ShoppingCart() {
 
     return(
         <Container>
-            <Header />
+            <RequestHeader />
 
             <Content>
+                <ListRequest>
+
             <h1>Meu pedido</h1>
 
             <CardRequest>
@@ -44,9 +47,19 @@ export function ShoppingCart() {
                 <p>R$ 103,88</p>
             </Total>
 
-            <Button title="Avançar" to="/payment"/>
+                </ListRequest>
+
+            <div className="buttonMobile">
+                <Button title="Avançar" to="/payment"/>
+            </div>
+
+            <PaymentMobile>
+                <h1>Pagamento</h1>
+                <PaymentQrCode/>
+            </PaymentMobile>
 
             </Content>
+
 
             <Footer/>
 

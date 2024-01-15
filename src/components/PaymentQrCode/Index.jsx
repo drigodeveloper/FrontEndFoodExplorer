@@ -1,13 +1,11 @@
-import { Container, Content, PaymentCard, AbaQrCode, AbaCreditCard } from "./styles";
+import { Container, PaymentCard, AbaQrCode, AbaCreditCard } from "./styles";
 import { useState } from "react";
 
 import { MdPix, MdCreditCard  } from "react-icons/md";
 
 import qrcode from '../../assets/qrcode.svg'
 
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
-import { Button } from '../../components/Button/Index'
+import { Button } from '../Button'
 
 
 export function PaymentQrCode() {
@@ -20,10 +18,8 @@ export function PaymentQrCode() {
 
   return(
     <Container>
-      <Header />
 
-      <Content>
-        <h1>Pagamento</h1>
+  
 
         <PaymentCard>
           <div className="menuButtons">
@@ -69,9 +65,8 @@ export function PaymentQrCode() {
             </AbaCreditCard>
           )}
         </PaymentCard>
-      </Content>
+    
 
-      <Footer />
     </Container>
   )
 }

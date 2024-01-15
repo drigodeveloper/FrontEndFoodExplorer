@@ -1,5 +1,5 @@
 import { Container, Content, DishAvatar } from "./styles";
-import { AdiminHeader } from '../../components/AdiminHeader/Index'
+import { Header } from '../../components/Header/Index'
 import { Footer } from '../../components/Footer/Index'
 import { Button } from '../../components/Button/Index'
 import { Input } from '../../components/Input/Index'
@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 export function EditDish() {
     return(
         <Container>
-            <AdiminHeader />
+            <Header />
 
             <Link to="/">
                 <MdArrowBackIosNew />

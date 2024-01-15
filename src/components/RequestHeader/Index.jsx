@@ -1,13 +1,18 @@
 import { Container, Logo, ButtonMenu, RequestsButton, ButtonLogout, NavBar } from "./styles";
+
 import { Input } from '../Input/Index'
+
 import { FiMenu } from 'react-icons/fi'
 import { BsFillHexagonFill, BsSearch } from 'react-icons/bs'
 import { PiReceipt, PiSignOutFill } from 'react-icons/pi'
+
 import { useAuth } from "../../hooks/auth";
+import { Link } from "react-router-dom";
 
 
 
-export function Header() {
+
+export function RequestHeader() {
 
     const { signOut } = useAuth();
 
@@ -19,7 +24,7 @@ export function Header() {
                 </ButtonMenu>
 
 
-            <Logo>
+            <Logo to="/">
                 <BsFillHexagonFill />
                 <h1>Food explorer</h1>
             </Logo>
@@ -33,8 +38,8 @@ export function Header() {
             </div>
 
             <NavBar>
-                <a href="">Meus favoritos</a>
-                <a href="">Histórico de pedidos</a>
+                <Link to="/favorites">Meus favoritos</Link>
+                <Link to="/history">Histórico de pedidos</Link>
             </NavBar>
 
             <RequestsButton to="/cart">

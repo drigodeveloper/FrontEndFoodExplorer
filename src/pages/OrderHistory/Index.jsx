@@ -1,12 +1,12 @@
 import { Container, Content, CardHistory } from "./styles";
-import { Header } from '../../components/Header'
+import { RequestHeader } from '../../components/RequestHeader'
 
 import { GrStatusGoodSmall } from "react-icons/gr";
 
 export function OrderHistory() {
     return(
         <Container>
-            <Header/>
+            <RequestHeader/>
 
             <Content>
                 <h1>Histórico de pedidos</h1>

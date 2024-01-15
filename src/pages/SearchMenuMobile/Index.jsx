@@ -1,3 +1,5 @@
+import { useAuth } from "../../hooks/auth";
+
 import { Container, Header, CloseButton } from "./styles";
 
 import { Link } from "react-router-dom";
@@ -10,6 +12,9 @@ import { BsSearch } from 'react-icons/bs'
 
 
 export function SearchMenuMobile() {
+
+    const { signOut } = useAuth();
+    
     return(
         <Container>
             <Header>
@@ -29,7 +34,8 @@ export function SearchMenuMobile() {
             <nav>
             <Link to="/history">Histórico de pedidos</Link>
             <Link to="/favorites">Meus favoritos</Link>
-            <Link >Sair</Link>
+            <button onClick={signOut}>Sair</button>
+            
 
             </nav>
 

@@ -7,11 +7,7 @@ export const Container = styled.footer`
     height: 4.8rem;
     grid-area: footer;
 
-    position: fixed;
-
-    bottom: 0;
-
-    
+       
     display: flex;
     gap: 1rem;
     align-items: center;

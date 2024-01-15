@@ -4,7 +4,7 @@ import{ Sessions } from '../../components/Sessions/Index'
 import{ DishBox } from '../../components/DishBox/Index'
 import banner from '../../assets/banner.svg'
 
-export function Home({ is_admin = false }) {
+export function Home() {
 
 
     return(

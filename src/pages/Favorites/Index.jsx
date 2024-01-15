@@ -1,6 +1,6 @@
 import { Container, Content, CardRequest } from "./styles";
 
-import { Header } from "../../components/Header";
+import { RequestHeader } from "../../components/RequestHeader";
 import { Footer } from '../../components/Footer';
 
 import maskGroup from '../../assets/Mask group-2.png';
@@ -9,10 +9,10 @@ export function Favorites() {
 
     return(
         <Container>
-            <Header />
+            <RequestHeader />
 
+            <h1>Meus favoritos</h1>
             <Content>
-            <h1>Meu favoritos</h1>
 
             <CardRequest>
                 <div className="img">
@@ -26,6 +26,77 @@ export function Favorites() {
 
             </CardRequest>
             <CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest>
+            <CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest><CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest><CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest><CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest><CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest><CardRequest>
+                <div className="img">
+                    <img src={maskGroup} alt="" />
+                </div>
+
+                <div className="descriptionDish">
+                    <h1>Salada Radish</h1>
+                    <a href="">Remover dos Favoritos</a>
+                </div>
+
+            </CardRequest><CardRequest>
                 <div className="img">
                     <img src={maskGroup} alt="" />
                 </div>

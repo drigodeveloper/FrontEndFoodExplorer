@@ -6,11 +6,15 @@ import { Link } from "react-router-dom";
 export const Container = styled.div`
    display: flex;
    flex-direction: column;
+   width: 100%;
+   height: 100%;
 
 `;
 
 export const Content = styled.div`
-    padding:  3.5rem 2.1rem;
+    
+    padding: 3.5rem 2.1rem;
+    
 
     > h1 {
         font-family: 'Poppins', sans-serif;
@@ -19,6 +23,20 @@ export const Content = styled.div`
         font-weight: 500;
         margin-bottom: 2.1rem;
     }
+
+    @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        padding: 2rem 7.6rem;
+        gap: 12.7rem;
+
+        
+        >.buttonMobile {
+                display: none;
+            }
+        }
 
 
 `;
@@ -45,6 +63,9 @@ export const CardRequest = styled.div`
         height: 6.2rem;
         margin-right: 1rem;
     }
+
+
+ 
 `;
 
 export const Total = styled.div`
@@ -59,4 +80,23 @@ export const Total = styled.div`
         font-weight: 500;
     }
 `;
+
+export const PaymentMobile = styled.div`
+
+    width: 100%;
+    > h1 {
+        margin-bottom: 2.1rem;
+    }
+    
+    @media(max-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+        display: none;
+    }
+`;
+
+export const ListRequest = styled.div`
+   width: 100%;
+    
+`;
+
+
 

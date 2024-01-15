@@ -36,7 +36,7 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
     
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
     display: flex;
 
     >svg {
@@ -52,8 +52,10 @@ export const Logo = styled.div`
         font-size: 1.3rem;
         font-style: normal;
         font-weight: 700;
+        color: ${({theme}) => theme.COLORS.WHITE};
     }
 `;
+
 export const ButtonMenu = styled(Link)`
     background-color: transparent;
     border: none;
@@ -140,7 +142,59 @@ export const ButtonLogout = styled.button`
     }
 `;
 
-export const NavBar = styled.div`
+export const LogoAdmin = styled.div`
     display: flex;
+    
+    
+    >svg {
+        color: ${({theme}) => theme.COLORS.BLUE};
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: .5rem;
+        
+    }
+    
+    .logoName {
+        display: flex;
+        flex-direction: column;
+
+        >h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3rem;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        >p {
+            align-self: flex-end;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: ${({theme}) => theme.COLORS.LIGHT_BLUE};
+
+        }
+    }
+
 `;
+
+export const NewDishButton = styled(Link)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${({theme}) => theme.COLORS.RED};;
+    border: none;
+    border-radius: 0.31rem;
+    color: ${({theme}) => theme.COLORS.WHITE};
+    width: 13.5rem;
+    height: 3rem;
+
+    
+    @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
+        
+    }
+   
+
+`;
+
+
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { Container, Content, DishAvatar } from "./styles";
 
-import { AdiminHeader } from '../../components/AdiminHeader/Index'
+import { Header } from '../../components/Header/Index'
 import { Button } from '../../components/Button/Index'
 import { Input } from '../../components/Input/Index'
 import { IngredientsItems } from '../../components/IngredientsItems/Index'
@@ -44,7 +44,7 @@ export function NewDish() {
 
     return(
         <Container>
-            <AdiminHeader />
+            <Header />
             
             <Link to="/">
                 <MdArrowBackIosNew />
