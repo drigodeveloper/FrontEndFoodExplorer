@@ -1,61 +1,58 @@
 import { useState, useEffect } from 'react'
+import { api } from "../../services/api"
+
 import { Container } from "./styles";
 import { DishBox } from "../DishBox/Index";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+export function Sessions({ title, children }) {
+  const [slidePreview, setslidePreview] = useState(1.5);
+  const [dishes, setDishes] = useState([]);
 
+  useEffect(() => {
+    async function fetchDishes() {
+      try {
+        const response = await api.get("/menu");
+        setDishes(Array.isArray(response.data) ? response.data : []);
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-export function Sessions({title, children}) {
-    const [slidePreview, setslidePreview] = useState(1.5);
+    function handleResize() {
+      if (window.innerWidth > 768) {
+        setslidePreview(3.5);
+      } else {
+        setslidePreview(1.5);
+      }
+    }
 
+    fetchDishes();
+    handleResize();
 
-    const data = [
-        {id: "1", box: <DishBox title="Salada Ravanello >" price="49,97"/>},
-        {id: "2", box: <DishBox title="Salada Ravanello >" price="49,97"/>},
-        {id: "3", box: <DishBox title="Salada Ravanello >" price="49,97"/>},
-        {id: "4", box: <DishBox title="Salada Ravanello >" price="49,97"/>},
-        {id: "5", box: <DishBox title="Salada Ravanello >" price="49,97"/>},
-        {id: "6", box: <DishBox title="Salada Ravanello >" price="49,97"/>},
-        {id: "7", box: <DishBox title="Salada Ravanello >" price="49,97"/>}
-    ]
+    window.addEventListener("resize", handleResize);
 
-    useEffect(()=> {
-        function handleResize() {
-            if(window.innerWidth > 768) {
-                setslidePreview(3.5);
-            }else {
-                setslidePreview(1.5);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
-            }
-        }
-
-        handleResize();
-
-        window.addEventListener("resize", handleResize)
-
-        return () => {
-            window.removeEventListener("resize", handleResize)
-        }
-    }, [])
-    return(
-        <Container>
-            <h1>{title}</h1>
-            <Swiper
-            slidesPerView={slidePreview}
-            pagination={{clickable: true}}
-            navigation
-            >
-                
-                {data.map((item) => (
-                <SwiperSlide key={item.id}>
-                    {item.box}
-                </SwiperSlide>
-                ))}
-            </Swiper>
-
-
-        </Container>
-    )
+  return (
+    <Container>
+      <h1>{title}</h1>
+      <Swiper
+        slidesPerView={slidePreview}
+        pagination={{ clickable: true }}
+        navigation
+      >
+        {dishes?.map(item => (
+          <SwiperSlide key={item.id}>
+            {item.box}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {children}
+    </Container>
+  )
 }
-            

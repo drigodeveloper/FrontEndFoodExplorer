@@ -1,5 +1,8 @@
 import { api } from "../../services/api"
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom'
+
 
 import { Container, Content, DishAvatar } from "./styles";
 
@@ -11,7 +14,6 @@ import { IngredientsItems } from '../../components/IngredientsItems/Index'
 import { FiUpload } from "react-icons/fi";
 import { MdArrowBackIosNew } from "react-icons/md";
 
-import { Link } from 'react-router-dom'
 
 
 
@@ -19,27 +21,56 @@ import { Link } from 'react-router-dom'
 
 export function NewDish() {
 
+    const navigate = useNavigate();
+
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
-    const [tags, setTags] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
+    
+    const [tags, setTags] = useState([]);
+    const [newTags, setNewTags] = useState("");
 
-    async function addNewDish() {
-        if(!title || !category || !price || !description) {
-            alert("Preencha todos os campos para cadastrar um novo prato!")
+    
+
+    function handleAddTags() {
+        if(!newTags) {
+            alert("Não é possível inserir uma tag vazia, escreva o nome do ingrediente para continuar.")
             return
         }
-
-        console.log(tags)
-        
-        try {
-            await api.post("/menu", { title, description, category, price })
-            alert("Prato criado com sucesso!")
-        }catch(error) {
-            alert("Não foi possível criar o prato")
-        }
+        setTags(prevState => [...prevState, newTags])
+        setNewTags("");
     }
+
+    function handleDeletTags(deleted) {
+        setTags(prevState => prevState.filter(tag => tag !== deleted))
+        
+    }
+
+
+    async function handleAddNewDish() {
+        if(newTags) {
+            alert("Você deixou um ingrediente no campo para adicionar mas não adiciononu, clique para adicionar ou deixe o campo vazio para continuar")
+            return 
+        }
+        await api.post("/menu", { 
+             title, 
+             description, 
+             category, 
+             price, 
+             tags
+    
+    });
+
+        alert("Prato criado com sucesso!")
+        navigate("/")
+    
+   
+}
+
+
+                
+        
    
 
     return(
@@ -87,12 +118,32 @@ export function NewDish() {
                 </div>
 
                 <div className="rowDesktopTwo">
+                    
                     <label htmlFor="">Ingredientes
                     <div className="newTags">
+                       { 
+                          tags.map((tag, index) => (
+                            <IngredientsItems 
+                               key={String(index)}
+                               value={tag}
+                               onClick={() => handleDeletTags(tag)}
+                           />
+                           ))
+                        }
+
+
                         <IngredientsItems
-                        onChange={event => setTags(event.target.value)}
+                        isNew
+                        placeholder="Adicionar tag"
+                        onChange={e => setNewTags(e.target.value)}
+                        value={newTags}
+                        onClick={handleAddTags}
                         />
-                        <IngredientsItems />
+                        
+
+
+                       
+
                     </div>
                     </label>
                     
@@ -123,7 +174,7 @@ export function NewDish() {
                         <Button 
                         isactive
                         title="Salvar alterações"
-                        onClick={addNewDish}
+                        onClick={handleAddNewDish}
                         />
                     </div>
             </Content>

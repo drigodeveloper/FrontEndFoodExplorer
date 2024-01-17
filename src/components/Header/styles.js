@@ -142,7 +142,7 @@ export const ButtonLogout = styled.button`
     }
 `;
 
-export const LogoAdmin = styled.div`
+export const LogoAdmin = styled(Link)`
     display: flex;
     
     
@@ -163,6 +163,7 @@ export const LogoAdmin = styled.div`
             font-size: 1.3rem;
             font-style: normal;
             font-weight: 700;
+            color: ${({theme}) => theme.COLORS.WHITE};
         }
 
         >p {

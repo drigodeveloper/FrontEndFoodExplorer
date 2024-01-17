@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
-export const Container = styled(Link)`
+export const Container = styled.div`
 display: flex;
 flex-direction: column;
 position: relative;
@@ -15,29 +15,6 @@ border: 1px solid ${({theme}) => theme.COLORS.BACKGROUND_300};
 background: ${({theme}) => theme.COLORS.BACKGROUND_900};
 border-radius: 8px;
     
-
-
->.likeButton {
-    background-color: transparent;
-    border: none;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        
-        >svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: ${({theme}) => theme.COLORS.WHITE};
-            
-            
-        }
-    }
-    
-    >img {
-        width: 5.5rem;
-        height: 5.5rem;
-        margin: 0 auto;
-    }
 
     > h1 {
         font-family: 'Poppins', sans-serif;
@@ -99,6 +76,49 @@ border-radius: 8px;
 
     }
     
+`;
+
+export const AdminButton = styled(Link)`
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        
+        >svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: ${({theme}) => theme.COLORS.WHITE};
+            
+            
+        }
+`;
+
+export const CustomerButton = styled.button`
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        
+        >svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: ${({theme}) => theme.COLORS.WHITE};
+            
+            
+        }
+`;
+
+export const ImageDish = styled(Link)`
+    display: flex;
+    align-self: center;
+
+    >img {
+        width: 5.5rem;
+        height: 5.5rem;
+        margin: 0 auto;
+    }
 `;
 
 

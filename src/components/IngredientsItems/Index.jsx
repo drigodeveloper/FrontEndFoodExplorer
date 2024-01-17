@@ -4,7 +4,7 @@ import { FiPlus, FiX } from "react-icons/fi"
 
 export function IngredientsItems({isNew, value, onClick, ...rest}) {
     return(
-        <Container>
+        <Container isNew={isNew}>
            <input 
             type="text"
             value={value} 

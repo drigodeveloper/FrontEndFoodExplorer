@@ -1,19 +1,37 @@
+import { Link, useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
+import { api } from '../../services/api'
+
 import { Container, Content, GridTags, Account } from './styles'
+
 import { Header } from '../../components/Header/Index'
 import { Counter } from '../../components/Counter'
 import { Button } from '../../components/Button/Index'
 import { Tags } from '../../components/Tags/Index'
 import { Footer } from '../../components/Footer/Index'
+
 import Maskgroup from '../../assets/Mask group-2.png'
+
 import { PiReceipt } from 'react-icons/pi'
 import { MdArrowBackIosNew } from "react-icons/md";
-import { Link } from 'react-router-dom'
-
-
-
 
 
 export function Details() {
+
+  const params = useParams();
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchInfoDishes() {
+      const response = await api.get(`/menu`)
+      console.log(response)
+      setData(response.data)
+    }
+
+    fetchInfoDishes()
+  }, [])
 
   return (
    <Container>
@@ -31,8 +49,8 @@ export function Details() {
       <img src={Maskgroup} alt="" />
 
       <div className="dishDescription">
-        <h1>Salada Ravanello</h1>
-        <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>
+        <h1>{data.title}</h1>
+        <p>{data.description}</p>
 
         <GridTags>
       <Tags 
@@ -65,7 +83,7 @@ export function Details() {
         <Counter />
         <Button 
         icon={PiReceipt}
-        title="pedir ∙ R$ 25,00"/>
+        title="Pedir"/>
 
       </Account>
       </div>

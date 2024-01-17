@@ -9,9 +9,8 @@ export const Container = styled.div`
     background-color: ${({ theme, isNew}) => isNew ? "transparent" : theme.COLORS.GRAY_500};
     color: ${({theme}) => theme.COLORS.DARK_BACKGROUND};
 
-    border: ${({theme , isNew}) => isNew ? `1px dashed ${({theme}) => theme.COLROS.GRAY_100}` : "none"};
-    border-radius: .5rem;
-
+    border: ${({theme, isNew}) => isNew ? `1px dashed ${theme.COLORS.GRAY_100}` : "none"};
+    border-radius: 5px;
     margin-right: 1rem;
 
     > button {
@@ -42,7 +41,7 @@ export const Container = styled.div`
     
     
     @media(min-width: ${DEVICE_BREAKPOINTS.MEDIO}) {
-        
+        background-color: ${({ theme, isNew}) => isNew ? "transparent" : theme.COLORS.GRAY_500};
         
     }
 `;
