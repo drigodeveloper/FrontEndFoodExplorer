@@ -21,17 +21,17 @@ export function Details() {
 
   const params = useParams();
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     async function fetchInfoDishes() {
-      const response = await api.get(`/menu`)
+      const response = await api.get(`/menu/${params.id}`)
       console.log(response)
       setData(response.data)
     }
 
     fetchInfoDishes()
-  }, [])
+  }, [params.id])
 
   return (
    <Container>
@@ -43,7 +43,8 @@ export function Details() {
       Voltar
     </Link>      
 
-
+    {
+      data && 
     <Content>
 
       <img src={Maskgroup} alt="" />
@@ -53,58 +54,27 @@ export function Details() {
         <p>{data.description}</p>
 
         <GridTags>
-      <Tags 
-      title="alface"
-      />
-
-      <Tags 
-      title="Cebola"
-      />
-
-      <Tags 
-      title="pão naan"
-      />
-      
-      <Tags 
-      title="pepino"
-      />
-
-      <Tags 
-      title="rabanete"
-      />
-
-      <Tags 
-      title="tomate"
-      />
-      
+          {data.tags &&
+            data.tags.map((tag, index) => (
+              <Tags key={index} title={tag.name} />
+            ))
+          }
         </GridTags>
 
-      <Account>
-        <Counter />
-        <Button 
-        icon={PiReceipt}
-        title="Pedir"/>
-
-      </Account>
+        <Account>
+          <Counter />
+          <Button 
+            icon={PiReceipt}
+            title="Pedir"
+          />
+        </Account>
       </div>
 
-
     </Content>
+    }
 
-
-
-      <Footer/>
-
-     
-
-
-
-
-
-
-
+    <Footer/>
 
    </Container>
   )
 }
-

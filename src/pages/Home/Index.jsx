@@ -26,13 +26,14 @@ export function Home() {
     const [ search, setSearch ] = useState("");
     const [dishes, setDishes] = useState([]);
 
-
-
+//"/menu"
+    
     useEffect(() => {
         async function fetchDishes() {
-          try {
-            const response = await api.get("/menu");
-            setDishes(Array.isArray(response.data) ? response.data : []);
+            try {
+                const response = await api.get("/menu");
+                setDishes(response.data);
+                console.log(response.data)
           } catch (error) {
             console.log(error);
           }
@@ -109,12 +110,13 @@ export function Home() {
                 </Banner>
 
                  <Sessions title="Refeições">
-                    {dishes.map((dish) => (
+                    {dishes.map(dish => (
                     <DishBox
                         key={dish.id}
                         title={dish.title}
                         description={dish.description}
                         price={dish.price}
+                    
                     />
                     ))}
                 </Sessions>

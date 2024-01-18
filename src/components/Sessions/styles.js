@@ -5,6 +5,8 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakPoints";
 export const Container = styled.div`
     width: 100%;
     margin: 3.9rem 1.1rem;
+    display: flex;
+    
     h1 {
         font-family: 'Poppins', sans-serif;
         font-size: 1.1rem;

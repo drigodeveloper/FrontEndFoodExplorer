@@ -16,7 +16,7 @@ import maskgroup from '../../assets/Mask group-10.png'
 
 import { USER_ROLE } from "../../utils/roles"
 
-export function DishBox({ data, ...rest }) {
+export function DishBox({ title, description, price, ...rest }) {
 
   const { user } = useAuth();
   const params = useParams();
@@ -25,12 +25,15 @@ export function DishBox({ data, ...rest }) {
 
 
 
-useEffect(() => {
-  async function fetchDishes() {
-    const response = await api.get(`/menu/${params.id}`)
-    setDish(response.dish)
-  }
-}, [])
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get(`/menu/${params.id}`);
+      setDish(response.data.dish); // atualizando o estado com os dados recebidos
+    }
+
+    fetchDishes();
+  }, [params.id]);
+
   
 
   return (
@@ -53,9 +56,9 @@ useEffect(() => {
         <img src={maskgroup} alt="" />
       </ImageDish>
 
-      <h1>{dish?.title}</h1>
-      <p>{dish?.description}</p>
-      <h2>R${dish?.price}</h2>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <h2>R${price}</h2>
 
       {user.role === USER_ROLE.CUSTOMER && (
         <div className="counter">

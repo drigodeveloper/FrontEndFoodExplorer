@@ -10,11 +10,13 @@ export function Sessions({ title, children }) {
   const [slidePreview, setslidePreview] = useState(1.5);
   const [dishes, setDishes] = useState([]);
 
+  
+
   useEffect(() => {
     async function fetchDishes() {
       try {
         const response = await api.get("/menu");
-        setDishes(Array.isArray(response.data) ? response.data : []);
+        setDishes(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -46,7 +48,7 @@ export function Sessions({ title, children }) {
         pagination={{ clickable: true }}
         navigation
       >
-        {dishes?.map(item => (
+        {dishes.map(item => (
           <SwiperSlide key={item.id}>
             {item.box}
           </SwiperSlide>
